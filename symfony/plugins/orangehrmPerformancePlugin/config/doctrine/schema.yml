@@ -1,0 +1,398 @@
+Kpi:
+  tableName: ohrm_kpi
+  actAs: [SoftDelete]
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    job_title_code:
+      name: job_title_code as jobTitleCode
+      type: string(10)
+    kpi_indicators:
+      type: varchar(255)
+    min_rating:
+      type: integer(11)
+    max_rating:
+      type: integer(11)
+    default_kpi:
+      type: integer(2)
+    kpi_group: varchar(255)
+    delai: string(250)
+    objectif: string(250)
+    mode_calcul: string(250)
+  relations:
+    JobTitle:
+      local: jobTitleCode
+      foreign: id
+      type: one
+      
+KpiGroup:
+  tableName: ohrm_kpi_group
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    kpi_group_name:
+      type: string(255)
+
+PerformanceReview:
+  tableName: ohrm_performance_review
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    status_id:
+      name: status_id as statusId
+      type: integer(11)
+    employee_number:
+      name: employee_number as employeeNumber
+      type: integer(11)
+    work_period_start:
+      name: work_period_start as workPeriodStart
+      type: date
+    work_period_end:
+      name: work_period_end as workPeriodEnd
+      type: date
+    job_title_code:
+      name: job_title_code as jobTitleCode
+      type: integer
+    department_id:
+      name: department_id as departmentId
+      type: integer  
+    due_date:
+      name: due_date as dueDate
+      type: date
+    completed_date:
+      name: completed_date as completedDate
+      type: date
+    activated_date:
+      name: activated_date as activatedDate
+      type: timestamp(25)
+    final_comment:
+      name: final_comment as finalComment
+      type: clob(65532)
+    final_rate:
+      name: final_rate as finalRate
+      type: decimal
+  relations:
+    reviewerRating:
+      class: ReviewerRating
+      local: id
+      foreign: review_id
+      type: many
+    reviewers:
+      class: Reviewer
+      local: id
+      foreign: review_id
+      type: many
+    JobTitle:
+      local: jobTitleCode
+      foreign: id
+      type: one   
+    Department:
+      class: Subunit
+      local: departmentId
+      foreign: id
+      type: one
+    Employee:
+      class: Employee
+      local: employee_number
+      foreign: emp_number
+      type: one
+      
+ReviewerRating:
+  tableName: ohrm_reviewer_rating
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    rating:
+      name: rating as rating
+      type: decimal
+      notnull: false
+    kpi_id:
+      name: kpi_id as kpiId
+      type: integer(11)
+    review_id:
+      name: review_id as reviewId
+      type: integer(11)
+    reviewer_id:
+      name: reviewer_id as reviewerId
+      type: integer(11)  
+    comment:
+      name: comment as comment
+      type: clob(65532)
+    mois2:
+      type: decimal
+    mois3:
+      type: decimal
+    mois4:
+      type: decimal
+    mois5:
+      type: decimal
+    mois6:
+      type: decimal
+    mois7:
+      type: decimal
+    mois8:
+      type: decimal
+    mois9:
+      type: decimal
+    mois10:
+      type: decimal
+    mois11:
+      type: decimal
+    mois12:
+      type: decimal
+    note:
+      type: decimal
+    taux_atteint:
+      type: decimal
+    cumule:
+      type: decimal
+    valeur_cible: string(250)
+  relations:
+    performanceReview:
+      class: PerformanceReview
+      local: review_id
+      foreign: id
+      type: one
+    reviewer:
+      class: Reviewer
+      local: reviewer_id
+      foreign: id
+      type: one
+    kpi:
+      class: Kpi
+      local: kpi_id
+      foreign: id
+      type: one
+
+Reviewer:
+  tableName: ohrm_reviewer
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    review_id:
+      name: review_id as reviewId
+      type: integer(11)      
+    employee_number:
+      name: employee_number as employeeNumber
+      type: integer(11)
+    status:
+      name: status as status
+      type: integer(11)
+    reviewer_group_id:
+      name: reviewer_group_id as reviewerGroupId
+      type: integer(11)    
+    completed_date:
+      name: completed_date as completedDate
+      type: timestamp(25)
+    comment:
+      name: comment as comment
+      type: clob(65532)
+  relations:
+    rating:
+      class: ReviewerRating
+      local: id
+      foreign: reviewer_id
+      type: many
+    group:
+      class: ReviewerGroup
+      local: reviewer_group_id
+      foreign: id
+      type: one
+    review:
+      class: PerformanceReview
+      local: review_id
+      foreign: id
+      type: one      
+    Employee:
+      class: Employee
+      local: employee_number
+      foreign: emp_number
+      type: one
+      
+      
+ReviewerGroup:
+  tableName: ohrm_reviewer_group
+  columns:
+    id:
+      type: integer(6)
+      primary: true
+      autoincrement: true
+    name:
+      name: name as name
+      type: string(20)
+    piority:
+      type: integer(6)
+  relations:
+    rating:
+      class: Reviewer
+      local: id
+      foreign: reviewer_group_id
+      type: many
+
+
+Training:
+  tableName: ohrm_training
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    cout_formation:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    title:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false   
+    date_applied:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false 
+    emp_number:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(256)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    filecontent:
+      type: blob(2147483647)
+      notnull: false
+    filename:
+      type: string(255)
+      notnull: false
+    filetype:
+      type: string(255)
+      notnull: false
+    filesize:
+      type: integer
+      notnull: false
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+Vehicule:
+  tableName: ohrm_vehicule
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    emp_number:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    marque:
+      type: string(100)
+    energie:
+      type: string(100)
+    matricule_vehicule:
+      type: string(50)
+    dotation_carburant:
+      type: string(50)
+    date_applied:
+      type: date(25)
+    valider:
+      type: boolean
+    filecontent:
+      type: blob(2147483647)
+      notnull: false
+    filename:
+      type: string(255)
+      notnull: false
+    filetype:
+      type: string(255)
+      notnull: false
+    filesize:
+      type: integer
+      notnull: false
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
+PretImmobilier:
+  tableName: ohrm_pretimmobilier
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: true
+    montant_pret:
+      type: Decimal(65,0)
+    objet:
+      type: string(100)
+    nombre_mois:
+      type: integer(4)
+    date_accord:
+      type: date(25)
+      notnull: false
+    date_prelevement:
+      type: date(25)
+      notnull: false
+    quotite_saisissable:
+      type: Decimal(65,0)
+    emp_number:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    filecontent:
+      type: blob(2147483647)
+      notnull: false
+    filename:
+      type: string(255)
+      notnull: false
+    filetype:
+      type: string(255)
+      notnull: false
+    filesize:
+      type: integer
+      notnull: false
+  relations:
+    Employee:
+      local: emp_number
+      foreign: emp_number
+      type: one
+
