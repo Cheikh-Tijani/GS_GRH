@@ -36,7 +36,7 @@ $imagePath = theme_path("images/login");
               <div class="container">
                   <div class="pull-left">
                     <a href="<?php echo url_for('dashboard/index'); ?>" class="homeicone">
-                      <img src="<?php echo "{$imagePath}/logosablux.png"; ?>" width="20%" height="20%">
+                      <img src="<?php echo "{$imagePath}/logosepro.png"; ?>" width="20%" height="20%">
                     </a>
 
                   </div>

@@ -17,28 +17,38 @@
 
 .headerbackend{
     height: 30px;
-    background: #770a82;
-    background: -moz-linear-gradient(-45deg, #770a82 0%, #770a82 13%, #770a82 13%, #770a82 100%);
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #770a82), color-stop(13%, #770a82), color-stop(13%, #770a82), color-stop(100%, #770a82));
-    background: -webkit-linear-gradient(-45deg, #770a82 0%, #770a82 13%, #770a82 13%, #770a82 100%);
-    background: -o-linear-gradient(-45deg, #770a82 0%, #770a82 13%, #770a82 13%, #770a82 100%);
-    background: -ms-linear-gradient(-45deg, #770a82 0%, #770a82 13%, #770a82 13%, #770a82 100%);
-    background: linear-gradient(135deg, #770a82 0%, #770a82 13%, #770a82 13%, #770a82 100%);
+    background: #131d82;
+    background: -moz-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #2a4c97), color-stop(13%, #2a4c97), color-stop(13%, #131d82), color-stop(100%, #131d82));
+    background: -webkit-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: -o-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: -ms-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: linear-gradient(135deg, #2a4c97 50%, #2a4c97 13%, #131d82 13%, #131d82 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#125882', endColorstr='#16618c',GradientType=1 );
     /*border-bottom: 4px solid #fab824;*/
 }
 
 .footerlayout{
+    /*
     height: 30px;
-    background: #1b438c;
-    background: -moz-linear-gradient(-45deg, #1b438c 0%, #1b438c 13%, #1b438c 13%, #1b438c 100%);
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #1b438c), color-stop(13%, #1b438c), color-stop(13%, #1b438c), color-stop(100%, #1b438c));
-    background: -webkit-linear-gradient(-45deg, #1b438c 0%, #1b438c 13%, #1b438c 13%, #1b438c 100%);
-    background: -o-linear-gradient(-45deg, #1b438c 0%, #1b438c 13%, #1b438c 13%, #1b438c 100%);
-    background: -ms-linear-gradient(-45deg, #1b438c 0%, #1b438c 13%, #1b438c 13%, #1b438c 100%);
-    background: linear-gradient(135deg, #1b438c 0%, #1b438c 13%, #1b438c 13%, #1b438c 100%);
+    background: #000000;
+    background: -moz-linear-gradient(-45deg, #808080 0%, #808080 13%, #000000 13%, #000000 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #808080), color-stop(13%, #808080), color-stop(13%, #000000), color-stop(100%, #000000));
+    background: -webkit-linear-gradient(-45deg, #808080 0%, #808080 13%, #000000 13%, #000000 100%);
+    background: -o-linear-gradient(-45deg, #808080 0%, #808080 13%, #000000 13%, #000000 100%);
+    background: -ms-linear-gradient(-45deg, #808080 0%, #808080 13%, #000000 13%, #000000 100%);
+    background: linear-gradient(135deg, #808080 50%, #808080 13%, #000000 13%, #000000 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#125882', endColorstr='#16618c',GradientType=1 );
-
+    */
+    height: 30px;
+    background: #131d82;
+    background: -moz-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #2a4c97), color-stop(13%, #2a4c97), color-stop(13%, #131d82), color-stop(100%, #131d82));
+    background: -webkit-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: -o-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: -ms-linear-gradient(-45deg, #2a4c97 0%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    background: linear-gradient(135deg, #2a4c97 50%, #2a4c97 13%, #131d82 13%, #131d82 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#125882', endColorstr='#16618c',GradientType=1 );
     padding:0px 20px 50px;
 }
 
@@ -58,7 +68,7 @@
 }
 
 .footerlayout .footer-block .compagnie{
-    color:#ee7d60;
+    color: #ffffff;
 }
 
 .navbarcontent{
@@ -67,9 +77,12 @@
 
 .headerbackend .account a{
     padding: 2px 10px 0px;
-    color:#ee7d60;
+    color: #ffffff;
     font-size: 20px;
     margin: 0px;
+}
+.headerbackend .account .submenu a{
+    color: #0f0f0f;
 }
 .navbar-inner-backend{
     border:none;
@@ -80,7 +93,7 @@
 }
 .headerbackend .account > a:hover,
 .headerbackend .account > a:focus{
-    border-right:1px solid #770a82;
+    border-right:1px solid #131d82;
     background-color: transparent;
 }
 
@@ -110,7 +123,7 @@
 .headerbackend .account .submenu{
     left: auto;
     right: 0px;
-    border: 1px solid #770a82;
+    border: 1px solid #2488ff;
     box-shadow: none;
     top: auto;
     border-top-width: 0px;
@@ -119,7 +132,7 @@
 
 .homeicone IMG {
     width: 100px;
-    margin: 5px 0;
+    margin: 15px 0;
 }
 
 
@@ -164,14 +177,14 @@
 #sideMenu .cd-accordion-menu {
     background-color: rgba(255,255,255, 0.5);
     box-shadow:none;
-    border-right: 1px solid #A12B84;
+    border-right: 1px solid #2488ff;
     margin-top: 20px;
-    border-top: 1px solid #A12B84;
+    border-top: 1px solid #2488ff;
 }
 
 
 #sideMenu .cd-accordion-menu li.firstlevel {
-    border-bottom: 1px solid #A12B84;
+    border-bottom: 1px solid #2488ff;
     padding: 10px 0px 10px 30px;
 }
 
@@ -193,7 +206,7 @@
     padding: 0;
     font-size: 1rem;
     box-shadow: none;
-    color: #A12B84;
+    color: #2488ff;
 
 }
 
@@ -239,7 +252,7 @@
 /*Table */
 
 table.table th {
-    background-color: #770a82;
+    background-color: #131d82;
 }
 
 table tbody tr td a{
@@ -275,7 +288,7 @@ table tbody tr td a{
 
 #layoutcontent .box.searchForm .inner,
 #layoutcontent .box {
-    border: 1px solid #A12B84;
+    border: 1px solid #2488ff;
     background-color: rgba(255,255,255, 0.5);
 }
 
@@ -287,7 +300,7 @@ table tbody tr td a{
 
 
 #layoutcontent .box .head h1{
-    background: url("") #A12B84;
+    background: url("") #131d82;
     border: none;
     color: #FFFFFF;
     margin-bottom: 0;
@@ -311,31 +324,31 @@ table tbody tr td a{
     text-decoration:none;
     display: block;
     padding: 10px 20px;
-    background-color: #650582;
+    background-color: #131d82;
     border-radius: 30px;
     text-transform: uppercase;
 
 }
 
 .impressionbtn a:hover{
-    background-color: #A12B84;
+    background-color: #131d82;
 }
 .minratingclasse{
     display: none;
 }
 .smallerHeader, #induvidualEvaluate th{
-    background-color: #A12B84;
+    background-color: #131d82;
 }
 #induvidualEvaluate th{
     color:#FFFFFF;
 }
 .evaluationEmployee{
-    background-color: #A12B84;
+    background-color: #131d82;
     font-size: 15px;
     color: #FFFFFF;
 }
 #enteteevaluationEmployees{
-    background-color: #A12B84;
+    background-color: #131d82;
     color: #FFFFFF;
 }
 .evaluationEmployeeth{
@@ -343,7 +356,7 @@ table tbody tr td a{
 }
 .evaluationexpand{
 
-    width: 90%;
+    width: 100%;
     overflow: auto;
 }
 .evaldiv{
